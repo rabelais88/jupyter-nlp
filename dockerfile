@@ -8,4 +8,6 @@ WORKDIR /usr/src/app
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
-CMD jupyter lab
+# note on command
+# https://jupyter-notebook.readthedocs.io/en/stable/public_server.html#docker-cmd
+CMD jupyter lab --no-browser --ip=0.0.0.0 --allow-root --port=8080
